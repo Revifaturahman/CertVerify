@@ -50,12 +50,12 @@
 
     <div class="info">
         Sertifikat ini diberikan kepada:<br>
-        <div class="name">NAMA PESERTA</div>
+        <div class="name">{{ $certificate->name }}</div>
 
-        NIM: <strong>1234567890</strong><br><br>
+        NIM: <strong>{{ $certificate->nim }}</strong><br><br>
         Telah mengikuti kegiatan:<br>
-        <strong>Workshop Blockchain untuk Pendidikan</strong><br><br>
-        Tanggal Pelaksanaan: 15 Februari 2025
+        <strong>{{ $certificate->event_name }}</strong><br><br>
+        Tanggal Pelaksanaan: {{ $certificate->issued_at->format('d F Y') }}
     </div>
     <div class="footer">
         <div>Ketua Panitia<br><br>(__________)</div>
@@ -63,7 +63,7 @@
     </div>
 
     <div class="meta">
-        Certificate ID: CERT-2025-0002<br>
+        Certificate ID: {{ $certificate->certificate_id }}<br>
         Diterbitkan oleh CertVerify
     </div>
 </div>

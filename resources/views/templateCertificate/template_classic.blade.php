@@ -16,13 +16,13 @@
 <div class="cert">
     <h1>SERTIFIKAT</h1>
     <p>Diberikan kepada</p>
-    <div class="name">NAMA PESERTA</div>
+    <div class="name">{{ $certificate->name }}</div>
 
     <p>
-        NIM: <strong>1234567890</strong><br><br>
+        NIM: <strong>{{ $certificate->nim }}</strong><br><br>
         Atas partisipasinya dalam kegiatan<br>
-        <strong>Seminar Nasional Teknologi Blockchain</strong><br><br>
-        Tanggal: 10 Januari 2025
+        <strong>{{ $certificate->event_name }}</strong><br><br>
+        Tanggal: {{ $certificate->issued_at->format('d F Y') }}
     </p>
 
     <div class="footer">
@@ -31,7 +31,7 @@
     </div>
 
     <div class="meta">
-        Certificate ID: CERT-2025-0001<br>
+        Certificate ID: {{ $certificate->certificate_id }}<br>
         Sistem CertVerify
     </div>
 </div>

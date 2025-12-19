@@ -31,12 +31,12 @@ h1 { font-size: 38px; }
 <div class="certificate">
     <h1>SERTIFIKAT</h1>
     <p>Diberikan kepada</p>
-    <div class="name">NAMA PESERTA</div>
+    <div class="name">{{ $certificate->name }}</div>
 
     <p>
-        NIM: <strong>1234567890</strong><br><br>
-        Kegiatan: <strong>Kuliah Umum Teknologi Blockchain</strong><br>
-        Tanggal: 20 Maret 2025
+        NIM: <strong>{{ $certificate->nim }}</strong><br><br>
+        Kegiatan: <strong>{{ $certificate->event_name }}</strong><br>
+        Tanggal: {{ $certificate->issued_at->format('d F Y') }}
     </p>
 
     <div class="footer">
@@ -45,7 +45,7 @@ h1 { font-size: 38px; }
     </div>
 
     <div class="meta">
-        Certificate ID: CERT-2025-0003<br>
+        Certificate ID: {{ $certificate->certificate_id }}<br>
         CertVerify Blockchain Verification System
     </div>
 </div>

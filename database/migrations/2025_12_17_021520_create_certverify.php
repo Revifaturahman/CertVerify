@@ -15,12 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('certificate_id')->unique();
             $table->string('nim');
+            $table->string('name');
             $table->string('event_name');
+            $table->string('template_name');
             $table->date('issued_at');
             $table->enum('status', ['ISSUED', 'REVOKED'])->default('ISSUED');
             $table->string('hash_value')->nullable(); // hanya referensi
             $table->timestamps();
-
             $table->index('certificate_id');
             $table->index('nim');
         });
