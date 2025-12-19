@@ -1,3 +1,8 @@
+@php
+    $certificate = $certificate ?? null;
+@endphp
+
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -50,12 +55,13 @@
 
     <div class="info">
         Sertifikat ini diberikan kepada:<br>
-        <div class="name">{{ $certificate->name }}</div>
+        <div class="name">{{ $certificate->name ?? 'Nama Peserta' }}</div>
 
-        NIM: <strong>{{ $certificate->nim }}</strong><br><br>
+        NIM: <strong>{{ $certificate->nim ?? 'NIM' }}</strong><br><br>
         Telah mengikuti kegiatan:<br>
-        <strong>{{ $certificate->event_name }}</strong><br><br>
-        Tanggal Pelaksanaan: {{ $certificate->issued_at->format('d F Y') }}
+        <strong>{{ $certificate->event_name ?? 'Nama Event' }}</strong><br><br>
+        Tanggal Pelaksanaan: {{ optional(optional($certificate)->issued_at)->format('d F Y') ?? 'DD MM YYYY' }}
+
     </div>
     <div class="footer">
         <div>Ketua Panitia<br><br>(__________)</div>
@@ -63,7 +69,7 @@
     </div>
 
     <div class="meta">
-        Certificate ID: {{ $certificate->certificate_id }}<br>
+        Certificate ID: {{ $certificate->certificate_id ?? 'ID Sertifikat' }}<br>
         Diterbitkan oleh CertVerify
     </div>
 </div>

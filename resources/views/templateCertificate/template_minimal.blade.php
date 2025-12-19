@@ -1,3 +1,7 @@
+@php
+    $certificate = $certificate ?? null;
+@endphp
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -31,12 +35,13 @@ h1 { font-size: 38px; }
 <div class="certificate">
     <h1>SERTIFIKAT</h1>
     <p>Diberikan kepada</p>
-    <div class="name">{{ $certificate->name }}</div>
+    <div class="name">{{ $certificate->name ?? 'Nama Peserta' }}</div>
 
     <p>
-        NIM: <strong>{{ $certificate->nim }}</strong><br><br>
-        Kegiatan: <strong>{{ $certificate->event_name }}</strong><br>
-        Tanggal: {{ $certificate->issued_at->format('d F Y') }}
+        NIM: <strong>{{ $certificate->nim ?? 'NIM' }}</strong><br><br>
+        Kegiatan: <strong>{{ $certificate->event_name ?? 'Nama Event' }}</strong><br>
+        Tanggal: {{ optional(optional($certificate)->issued_at)->format('d F Y') ?? 'DD MM YYYY' }}
+
     </p>
 
     <div class="footer">
@@ -45,7 +50,7 @@ h1 { font-size: 38px; }
     </div>
 
     <div class="meta">
-        Certificate ID: {{ $certificate->certificate_id }}<br>
+        Certificate ID: {{ $certificate->certificate_id ?? 'ID Sertifikat' }}<br>
         CertVerify Blockchain Verification System
     </div>
 </div>
