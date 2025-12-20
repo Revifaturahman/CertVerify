@@ -20,6 +20,10 @@
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link" href="/verification">Verifikasi</a>
+                </li>
+
+                <li class="nav-item">
                     <a class="nav-link" href="/profile">Profile</a>
                 </li>
             </ul>

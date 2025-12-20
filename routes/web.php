@@ -3,6 +3,7 @@
 use App\Http\Controllers\CerticateController;
 use App\Http\Controllers\ParticipantController;
 use App\Http\Controllers\CertificatePreviewController;
+use App\Http\Controllers\VerificationLogsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -34,3 +35,6 @@ Route::get(
 Route::get('/certificate/pdf/{certificate}',
     [CertificatePreviewController::class, 'generatePdf']
 )->name('certificate.pdf');
+
+Route::get('/verification', [VerificationLogsController::class, 'index'])->name('verification.logs');
+Route::post('/verification', [VerificationLogsController::class, 'verify'])->name('verification.verify');
