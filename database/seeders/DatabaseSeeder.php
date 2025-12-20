@@ -29,11 +29,11 @@ class DatabaseSeeder extends Seeder
 
         DB::table('users')->insert([
             [
-                'name' => 'Vericatior',
-                'email' => 'verificator@example.com',
+                'name' => 'Admin',
+                'email' => 'admin@example.com',
                 'email_verified_at' => now(),
-                'password' => bcrypt('verificator123'),
-                'role' => 'verifier',
+                'password' => bcrypt('admin123'),
+                'role' => 'admin',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
