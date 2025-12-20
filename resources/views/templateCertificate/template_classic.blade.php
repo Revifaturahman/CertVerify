@@ -36,6 +36,26 @@
             display: flex;
             justify-content: space-between;
         }
+
+        .sign-left {
+            text-align: left;
+        }
+
+        .sign-right {
+            text-align: right;
+        }
+
+        .sign-table {
+            width: 100%;
+            margin-top: auto; /* dorong ke bawah */
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .sign-table td {
+            width: 50%;
+            vertical-align: top;
+        }
     </style>
 </head>
 <body>
@@ -57,10 +77,19 @@
 
     </p>
 
-    <div class="footer">
-        <div>Ketua Panitia<br><br>(__________)</div>
-        <div>Penanggung Jawab<br><br>(__________)</div>
-    </div>
+     <!-- TANDA TANGAN -->
+    <table class="sign-table">
+        <tr>
+            <td class="sign-left">
+                Ketua Panitia<br><br><br>
+                (__________)
+            </td>
+            <td class="sign-right">
+                Penanggung Jawab<br><br><br>
+                (__________)
+            </td>
+        </tr>
+    </table>
 
     <div class="meta">
         Certificate ID: {{ $certificate->certificate_id ?? 'ID Sertifikat' }}<br>
