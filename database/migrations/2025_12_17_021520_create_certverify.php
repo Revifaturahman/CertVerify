@@ -56,6 +56,7 @@ return new class extends Migration
             $table->enum('result', ['VALID', 'INVALID']);
             $table->timestamp('verified_at');
             $table->string('ip_address')->nullable();
+            $table->timestamps(); 
         });
 
     }
