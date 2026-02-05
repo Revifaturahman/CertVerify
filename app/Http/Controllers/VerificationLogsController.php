@@ -64,7 +64,7 @@ class VerificationLogsController extends Controller
             'certificate_id' => $certificate?->id,
             'input_certificate_id' => $certificateId,
             'input_nim' => $nim,
-            'verified_by' => 1,
+            'verified_by' => auth::id(),
             'result' => $isValid ? 'VALID' : 'INVALID',
             'verified_at' => now(),
             'ip_address' => $request->ip(),
