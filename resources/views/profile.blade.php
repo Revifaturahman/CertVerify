@@ -31,8 +31,8 @@
                     @endif
 
                     {{-- FORM --}}
-                    <form method="POST" action="/profile/password">
-                        @csrf
+                    {{-- <form method="POST" action="/profile/password">
+                        @csrf --}}
 
                         <div class="mb-3">
                             <label class="form-label">Nama</label>
@@ -59,7 +59,7 @@
                         </div>
 
                         <hr>
-
+{{--                         
                         <div class="mb-3">
                             <label class="form-label">Password Baru</label>
                             <input type="password"
@@ -78,8 +78,8 @@
 
                         <button type="submit" class="btn btn-primary w-100">
                             Update Password
-                        </button>
-                    </form>
+                        </button> --}}
+                    {{-- </form> --}}
 
                 </div>
             </div>
